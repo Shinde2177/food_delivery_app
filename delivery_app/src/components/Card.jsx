@@ -1,5 +1,5 @@
 import "../stylesheets/card.css"
-import chole from "../images/chole-bhature.jpg"
+import { cloudinaryImageUrl } from "../utils/constants";
 import star from '../images/star.png';
 const Card=(data)=>
 {
@@ -15,7 +15,7 @@ const Card=(data)=>
 
     return <div className="card" >
     <div className="card-info">
-        <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId} alt="chole bhature" />
+        <img src={cloudinaryImageUrl+cloudinaryImageId} alt="chole bhature" />
         <span className="hotel">{name}</span><br></br>
          {/* <h5>{data.dish}</h5> */} 
         <span className="cost">{costForTwo}</span><br/>

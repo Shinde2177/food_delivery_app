@@ -15,10 +15,10 @@
 
 
 .search{
-    width: 350px;
+    width: 60%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; 
     padding: 20px 30px 20px;
    
     
@@ -36,7 +36,7 @@
     margin-right: 14px;
     font-size: 18px;
 }
-.search button
+.searchbutton
 {
     border: 0;
     outline:  0;
@@ -47,6 +47,7 @@
     border-radius: 50%;
   cursor: pointer;
     overflow: hidden; 
+   padding-right: 30px;
 
 }
 
@@ -61,4 +62,17 @@
 .search img:hover
 {
     transform: scale(1.15);
+}
+.top-rated{
+    background-color: #4d95a8;
+    color: aliceblue;
+    border: 0px;
+    border-radius: 5px;
+    margin-left: 80%;
+    
+}
+
+.top-rated:hover{
+    background-color: yellowgreen;
+    color: black;
 }
