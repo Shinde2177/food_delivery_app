@@ -1,0 +1,65 @@
+.horizontal-scroll-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 97vw;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.containerRef {
+    width: 93vw;
+    height: 100%;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    margin-left: 25px;
+}
+
+.containerRef::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: max-content; 
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+}
+
+.cards {
+    height: 100px;
+    width: 100px;
+    background: linear-gradient(to right, #74ebd5 0%, #acb6e5 100%);
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background-color: #761c9f;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    color: white;
+    font-size: 18px;
+}
+
+.scroll-button.left {
+    left: 0;
+}
+
+.scroll-button.right {
+    right: 0;
+}
