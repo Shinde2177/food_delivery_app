@@ -2,19 +2,21 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import "../stylesheets/body.css";
 import search from "../images/search.png";
-import { Rolls } from '../utils/constants';
+
 import WhatsOnYourMind from "./WhatsOnYourMind";
+import {BodyShimer} from "./Shimer";
 
 
 const Body = () => {
   const [listCard, setListCard] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // New state for loading status
-  const [parentValue, setParentValue] = useState(Rolls);
+  const [isLoading, setIsLoading] = useState(true); 
+  const [parentValue, setParentValue] = useState();
 
 
   useEffect(() => {
+    setIsLoading(true)
     fetchData();
-  }, []);
+  }, [parentValue]);
 
   const fetchData = async () => {
     console.log("data fetched");
@@ -44,7 +46,7 @@ const Body = () => {
           <img src={search} alt="search" />
         </button>
         <button className="top-rated" onClick={() => {
-          setListCard(listCard.filter((itm) => itm.card.card.info.avgRating > 4.2));
+          setListCard(listCard.filter((itm) => itm.card.card.info.avgRating > 4));
         }}>
           Top Rated Restaurants
         </button>
@@ -52,7 +54,10 @@ const Body = () => {
       <WhatsOnYourMind setParentValue={setParentValue}/>
       <div className="res-cont">
         {isLoading ? (
-          <h1>Loading....</h1> 
+         <>
+         <BodyShimer/> <BodyShimer/> <BodyShimer/> <BodyShimer/> <BodyShimer/> 
+         <BodyShimer/> <BodyShimer/> <BodyShimer/> <BodyShimer/> <BodyShimer/> </>
+          
         ) : (
           listCard.map((item) => (
             <Card key={item.card.card.info.id} data={item} />

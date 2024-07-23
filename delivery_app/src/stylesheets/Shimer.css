@@ -1,0 +1,50 @@
+
+@keyframes skeleton-loading {
+    0% {
+      background-color: #f6f1f1;
+    }
+    100% {
+      background-color: linear-gradient(to right, #74ebd5 0%, #acb6e5 100%);
+    }
+  }
+.card-infosh{
+    /* --background: linear-gradient(to right, #74ebd5 0%, #acb6e5 100%); */
+    opacity: .7;
+    width: 190px;
+    height: 254px;
+    padding: 5px;
+    border-radius: 1rem;
+    overflow: visible;
+    /* background: #74ebd5; */
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+    margin: 20px;
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
+  .card-info {
+    color: white;
+    cursor: pointer;
+  }
+
+  .shimerWoym {
+    height: 100px;
+    width: 100px;
+   
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+.img{
+    width: 170px;
+    height: 110px;
+    margin-top: 10px;
+    margin-left: 5px;
+    background-color: #746f6f;
+    animation: skeleton-loading 2s linear infinite alternate;
+}

@@ -63,3 +63,10 @@
 .scroll-button.right {
     right: 0;
 }
+.choice {
+    height: 100px;
+    width:100px;
+}
+h2{
+    margin: -20px 0 0 0 ;
+}

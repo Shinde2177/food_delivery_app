@@ -1,6 +1,7 @@
 
 .header {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
@@ -8,6 +9,9 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
     flex-wrap: wrap; 
     box-sizing: border-box; 
+    position: fixed;
+    z-index: 4;
+   
 }
 
 /* .header{
