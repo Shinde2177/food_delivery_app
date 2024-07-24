@@ -11,9 +11,12 @@ const Body = () => {
   const [listCard, setListCard] = useState([]);
   const [isLoading, setIsLoading] = useState(true); 
   const [parentValue, setParentValue] = useState();
+  const[searchText,setSearchText]=useState("");
+  const[filteredCards,setFilteredCards]=useState([]);
 
-
+  // console.log("card",listCard[4])
   useEffect(() => {
+
     setIsLoading(true)
     fetchData();
   }, [parentValue]);
@@ -24,9 +27,10 @@ const Body = () => {
     try {
       const response = await fetch(parentValue);
       const jsonData = await response.json();
-      const arr = jsonData.data.cards;
-      console.log("data", arr);
-      setListCard(arr.slice(3));
+      const arr = jsonData.data.cards.slice(3);
+      // console.log("data", arr);
+      setListCard(arr);
+      setFilteredCards(arr);
       setIsLoading(false); 
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -41,12 +45,22 @@ const Body = () => {
           type="text"
           placeholder="Search here"
           spellCheck="false"
+          value={searchText}
+          onChange={(e)=>{setSearchText(e.target.value)}}
         />
-        <button className="searchbutton">
+        <button className="searchbutton" onClick={()=>{
+          console.log(listCard);
+
+         const filteredList=listCard.filter((cards)=>cards.card.card.info.name.toLowerCase().includes(searchText.toLowerCase()));
+         console.log("list",filteredList)
+         setFilteredCards(filteredList)
+         
+        }}>
           <img src={search} alt="search" />
         </button>
         <button className="top-rated" onClick={() => {
-          setListCard(listCard.filter((itm) => itm.card.card.info.avgRating > 4));
+          
+          setFilteredCards(filteredCards.filter((itm) => itm.card.card.info.avgRating > 4));
         }}>
           Top Rated Restaurants
         </button>
@@ -59,7 +73,7 @@ const Body = () => {
          <BodyShimer/> <BodyShimer/> <BodyShimer/> <BodyShimer/> <BodyShimer/> </>
           
         ) : (
-          listCard.map((item) => (
+          filteredCards.map((item) => (
             <Card key={item.card.card.info.id} data={item} />
           ))
         )}

@@ -7,7 +7,7 @@ import { Woym } from './Shimer';
 
 
 const WhatsOnYourMind =({ setParentValue }) => {
-  const [scrollPosition,setScrollPosition]=useState(0);
+  
   const [catagories,setCatagories]=useState([]);
   const [isLoading, setIsLoading] = useState(true);
 

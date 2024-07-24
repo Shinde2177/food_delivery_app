@@ -9,11 +9,18 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
     flex-wrap: wrap; 
     box-sizing: border-box; 
-    position: fixed;
+    /* position: fixed; */
     z-index: 4;
    
 }
-
+.login{
+    background-color: #75d4e7;
+    border: none;
+    border-radius: 3px;
+    
+    height: 25px;
+    width: 60px;
+}
 /* .header{
     display: flex;
     justify-content: space-between;
